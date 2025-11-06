@@ -32,14 +32,14 @@ void game() {
     fgets(name, sizeof(name), stdin);
 
     printf("Hello, ");
-    printf(name);
+    printf(name);//Could be used to extract canary value
     printf("! Let's play a game.\n");
 
     printf("What's your message? ");
-    fgets(message, 100, stdin);
+    fgets(message, 100, stdin); // write to bypass canary
 
     printf("Your message is ");
-    puts(message);
+    puts(message); //
 }
 
 int main() {

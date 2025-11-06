@@ -39,12 +39,12 @@ void game() {
     int correct = 0;
 
     while(correct < 10) {
-        code = lrand();
+        code = lrand(); // This is what we want to get from the stack
 
         printf("Recipient? ");
         fgets(buffer, sizeof(buffer), stdin);
         printf("Sending to ");
-        printf(buffer); 
+        printf(buffer); //vulneablity here
         printf("...\n");
 
         printf("Guess? ");
